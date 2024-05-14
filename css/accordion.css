@@ -1,0 +1,42 @@
+.accordions {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 1rem 2rem;
+
+	.item {
+		display: grid;
+		grid-template-rows: auto 0fr;
+		overflow: clip;
+		padding: 1rem 0.5rem;
+
+		border-width: 0.1rem;
+		border-style: solid;
+		border-color: black;
+		border-radius: 0.5rem;
+
+		transition-property: grid-template-rows;
+		transition-timing-function: cubic-bezier(0.44, -0.01, 0, 1);
+		transition-duration: var(--duration, 0.3s);
+
+		&:has([aria-expanded='true']) {
+			grid-template-rows: auto 1fr;
+		}
+
+		.header {
+			cursor: pointer;
+			background-color: transparent;
+			border: none;
+			font-size: 1.8rem;
+			text-align: start;
+		}
+
+		.panel {
+			overflow: hidden;
+
+			&[hidden] {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	hanging-punctuation: first last;
+}
+
+/* body {
+	background-color: oklch(50% 0.6 195deg);
+} */
+
+svg,
+video {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+img,
+picture {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	font-style: italic;
+	background-repeat: no-repeat;
+	background-size: cover;
+	shape-margin: 0.75rem;
+	margin: 0;
+	padding: 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+	font-weight: 600;
+	line-height: 1.1;
+	letter-spacing: var(--ls-heading, normal);
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	max-width: 65ch;
+	text-wrap: pretty;
+	margin: 0;
+	padding: 0;
+}
+
+:focus-visible {
+	outline-width: var(--_thikness, 2px);
+	outline-style: var(--_outline-style, solid);
+	outline-color: var(--color-accent-hover);
+	outline-offset: var(--_offset, 2px);
+}
+
+section {
+	padding-block: var(--gutter-sm);
+}
+
+/* links */
+a {
+	color: oklch(0% 0.6 195deg);
+}
+
+/* Forms */
+
+/* other */
+abbr {
+	cursor: help;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:has(:target) {
+		scroll-behavior: smooth;
+	}
+}

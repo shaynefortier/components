@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Accordion</title>
+		<link rel="stylesheet" href="css/globals.css" />
+		<link rel="stylesheet" href="css/accordion.css" />
+		<script src="js/accordions.js"></script>
+	</head>
+	<body>
+		<h1>Accordion</h1>
+		<div class="accordions">
+			<div class="item">
+				<button
+					id="accordion1"
+					class="header"
+					aria-expanded="false"
+					aria-controls="content-1">
+					Item 1
+				</button>
+				<div
+					id="content-1"
+					class="panel"
+					role="region"
+					aria-labelledby="accordion1"
+					hidden>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Quisquam eveniet voluptatibus possimus delectus
+						explicabo? Quae harum provident, fugiat, nam
+						perspiciatis neque laborum mollitia culpa rem asperiores
+						doloremque maiores, <a href="#">molestias libero</a>!
+					</p>
+				</div>
+			</div>
+			<div class="item">
+				<button
+					id="accordion2"
+					class="header"
+					aria-expanded="false"
+					aria-controls="content-2">
+					Item 2
+				</button>
+				<div
+					id="content-2"
+					class="panel"
+					role="region"
+					aria-labelledby="accordion2"
+					hidden>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Quisquam eveniet voluptatibus possimus delectus
+						explicabo? Quae harum provident, fugiat, nam
+						perspiciatis neque laborum mollitia culpa rem asperiores
+						doloremque maiores, <a href="#">molestias libero</a>!
+					</p>
+				</div>
+			</div>
+			<div class="item">
+				<button
+					id="accordion3"
+					class="header"
+					aria-expanded="false"
+					aria-controls="content-3">
+					Item 3
+				</button>
+				<div
+					id="content-3"
+					class="panel"
+					role="region"
+					aria-labelledby="accordion3"
+					hidden>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Quisquam eveniet voluptatibus possimus delectus
+						explicabo? Quae harum provident, fugiat, nam
+						perspiciatis neque laborum mollitia culpa rem asperiores
+						doloremque maiores, <a href="#">molestias libero</a>!
+					</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			const accordions = new Accordion(
+				document.querySelector('.accordions')
+			);
+		</script>
+	</body>
+</html>
