@@ -7,7 +7,7 @@
 		<title>Accordion</title>
 		<link rel="stylesheet" href="css/globals.css" />
 		<link rel="stylesheet" href="css/accordion.css" />
-		<script src="js/accordions.js"></script>
+		<script src="js/Accordions.js"></script>
 	</head>
 	<body>
 		<h1>Accordion</h1>
@@ -16,7 +16,7 @@
 				<button
 					id="accordion1"
 					class="header"
-					aria-expanded="false"
+					aria-expanded="true"
 					aria-controls="content-1">
 					Item 1
 				</button>
@@ -24,8 +24,7 @@
 					id="content-1"
 					class="panel"
 					role="region"
-					aria-labelledby="accordion1"
-					hidden>
+					aria-labelledby="accordion1">
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Quisquam eveniet voluptatibus possimus delectus
@@ -39,7 +38,7 @@
 				<button
 					id="accordion2"
 					class="header"
-					aria-expanded="false"
+					aria-expanded="true"
 					aria-controls="content-2">
 					Item 2
 				</button>
@@ -47,8 +46,7 @@
 					id="content-2"
 					class="panel"
 					role="region"
-					aria-labelledby="accordion2"
-					hidden>
+					aria-labelledby="accordion2">
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Quisquam eveniet voluptatibus possimus delectus
@@ -62,7 +60,7 @@
 				<button
 					id="accordion3"
 					class="header"
-					aria-expanded="false"
+					aria-expanded="true"
 					aria-controls="content-3">
 					Item 3
 				</button>
@@ -70,8 +68,7 @@
 					id="content-3"
 					class="panel"
 					role="region"
-					aria-labelledby="accordion3"
-					hidden>
+					aria-labelledby="accordion3">
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Quisquam eveniet voluptatibus possimus delectus
@@ -83,8 +80,12 @@
 			</div>
 		</div>
 		<script>
-			const accordions = new Accordion(
-				document.querySelector('.accordions')
+			const options = {
+				oneActiveOnly: true,
+			};
+			const accordions = new Accordions(
+				document.querySelector('.accordions'),
+				options
 			);
 		</script>
 	</body>
