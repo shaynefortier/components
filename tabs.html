@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tab Component</title>
+		<link rel="stylesheet" href="css/globals.css" />
+		<link rel="stylesheet" href="css/tabs.css" />
+		<script src="js/Tabs.js"></script>
+	</head>
+	<body>
+		<h1 id="tabs-title">Tab Component</h1>
+		<div class="tabs">
+			<ul class="tab-items" aria-labelledby="tabs-title">
+				<li class="item">
+					<a id="tab-1" href="#panel-1">Tab 1</a>
+				</li>
+				<li class="item">
+					<a id="tab-2" href="#panel-2">Tab 2</a>
+				</li>
+				<li class="item">
+					<a id="tab-3" href="#panel-3">Tab 3</a>
+				</li>
+			</ul>
+			<div class="panels">
+				<div id="panel-1" class="panel" aria-labelledby="tab-1">
+					<h2>Panel 1</h2>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Quo ipsa quae ut voluptatum. Est cupiditate earum quidem
+						voluptates hic vero rem. Nisi laboriosam doloribus
+						voluptatem! Odit minus esse quasi molestiae.
+					</p>
+				</div>
+				<div id="panel-2" class="panel" aria-labelledby="tab-2">
+					<h2>Panel 2</h2>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Quo ipsa quae ut voluptatum. Est cupiditate earum quidem
+						voluptates hic vero rem. Nisi laboriosam doloribus
+						voluptatem! Odit minus esse quasi molestiae.
+					</p>
+				</div>
+				<div id="panel-3" class="panel" aria-labelledby="tab-3">
+					<h2>Panel 3</h2>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Quo ipsa quae ut voluptatum. Est cupiditate earum quidem
+						voluptates hic vero rem. Nisi laboriosam doloribus
+						voluptatem! Odit minus esse quasi molestiae.
+					</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			const tabs = new Tabs(document.querySelector('.tabs'));
+		</script>
+	</body>
+</html>
