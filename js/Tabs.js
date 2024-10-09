@@ -1,6 +1,12 @@
 class Tabs {
 	constructor(element, options = {}) {
-		this.element = element;
+		if (typeof element === 'string') {
+			this.element = document.querySelector(element);
+		} else if (HTMLElement.prototype.isPrototypeOf(element)) {
+			this.element = element;
+		} else {
+			throw new Error('Element must be a string or an HTMLElement');
+		}
 		this.panels = this.element.querySelectorAll('.panel');
 		this.items = this.element.querySelectorAll('.tab-items a');
 
@@ -82,11 +88,7 @@ class Tabs {
 		if (!currentTab.parentElement.previousElementSibling) {
 			this.switchTab(this.items[this.items.length - 1]);
 		} else {
-			this.switchTab(
-				currentTab.parentElement.previousElementSibling.querySelector(
-					'a'
-				)
-			);
+			this.switchTab(currentTab.parentElement.previousElementSibling.querySelector('a'));
 		}
 	}
 
@@ -96,9 +98,7 @@ class Tabs {
 		if (!currentTab.parentElement.nextElementSibling) {
 			this.switchTab(this.items[0]);
 		} else {
-			this.switchTab(
-				currentTab.parentElement.nextElementSibling.querySelector('a')
-			);
+			this.switchTab(currentTab.parentElement.nextElementSibling.querySelector('a'));
 		}
 	}
 }

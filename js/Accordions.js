@@ -1,17 +1,23 @@
 class Accordions {
 	constructor(element, options = {}) {
-		this.element = element;
+		const defaults = {
+			closeDelay: 300,
+			oneActiveOnly: false,
+		};
+		this.timerOut;
+
+		console.log(HTMLElement.prototype.isPrototypeOf(element));
+		if (typeof element === 'string') {
+			this.element = document.querySelector(element);
+		} else if (HTMLElement.prototype.isPrototypeOf(element)) {
+			this.element = element;
+		} else {
+			throw new Error('Element must be a string or an HTMLElement');
+		}
+
 		this.headers = this.element.querySelectorAll('.header');
 		this.panels = this.element.querySelectorAll('.panel');
-		this.options = {
-			closeDelay: options.closeDelay ? options.closeDelay : 300,
-			oneActiveOnly: options.oneActiveOnly
-				? options.oneActiveOnly
-				: false,
-		};
-
-		console.log(options);
-		console.log(this.options);
+		this.options = { ...defaults, ...options };
 
 		this.init();
 	}
@@ -30,10 +36,7 @@ class Accordions {
 				if (this.options.oneActiveOnly) {
 					this.panels.forEach((region, index) => {
 						if (region !== panel) {
-							this.headers[index].setAttribute(
-								'aria-expanded',
-								'false'
-							);
+							this.headers[index].setAttribute('aria-expanded', 'false');
 							this.togglePanel(region, false);
 						}
 					});
@@ -54,9 +57,11 @@ class Accordions {
 
 	togglePanel(panel, show) {
 		if (show) {
+			clearTimeout(this.timerOut);
 			panel.removeAttribute('hidden');
 		} else {
-			setTimeout(() => {
+			clearTimeout(this.timerOut);
+			this.timerOut = setTimeout(() => {
 				panel.setAttribute('hidden', '');
 			}, 300);
 		}

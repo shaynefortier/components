@@ -8,15 +8,9 @@
 		display: grid;
 		grid-template-rows: auto 0fr;
 		overflow: clip;
-		padding: 1rem 0.5rem;
-
-		border-width: 0.1rem;
-		border-style: solid;
-		border-color: black;
-		border-radius: 0.5rem;
 
 		transition-property: grid-template-rows;
-		transition-timing-function: cubic-bezier(0.44, -0.01, 0, 1);
+		transition-timing-function: cubic-bezier(0.5, 0, 1, 0);
 		transition-duration: var(--duration, 0.3s);
 
 		&:has([aria-expanded='true']) {
@@ -29,6 +23,19 @@
 			border: none;
 			font-size: 1.8rem;
 			text-align: start;
+			position: relative;
+
+			&::after {
+				content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2.5em' height='2.5em' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12.6 12L8 7.4L9.4 6l6 6l-6 6L8 16.6z'/%3E%3C/svg%3E");
+				transition: right 500ms ease, transform 500ms ease;
+				position: absolute;
+				right: 0;
+			}
+
+			&[aria-expanded='true']::after {
+				transform: rotate(90deg);
+				right: 0.3em;
+			}
 		}
 
 		.panel {
