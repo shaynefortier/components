@@ -14,15 +14,12 @@ class TextReveal {
 	init() {
 		for (let i = 0; i < this.elements.length; i++) {
 			const element = this.elements[i];
-			// this.observer.observe(element);
 			this.addSplitting(element);
 		}
 		TextReveal.splitWords();
 	}
 
 	activate(entries) {
-		console.log(entries);
-
 		for (let i = 0; i < entries.length; i++) {
 			const entry = entries[i];
 			if (entry.isIntersecting) {
@@ -69,3 +66,6 @@ class TextReveal {
 		}
 	}
 }
+
+const textRevealElements = document.querySelectorAll('.text-reveal');
+new TextReveal(textRevealElements);
