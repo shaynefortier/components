@@ -62,7 +62,7 @@ p {
 }
 
 section {
-	padding-block: var(--gutter-sm);
+	padding-block: 5rem;
 }
 
 /* links */

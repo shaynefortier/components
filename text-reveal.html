@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Text reveal (Splitting.js)</title>
+		<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+		<link rel="stylesheet" href="css/globals.css" />
+		<link rel="stylesheet" href="css/text-reveal.css" />
+		<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+		<script src="js/TextReveal.js"></script>
+	</head>
+	<body>
+		<section>
+			<h1>Text Reveal</h1>
+			<p class="bigger">
+				A javaScript class that allows to dynamically add the data attribute to each paragraph and init
+				Splitting.js library. And the animation is triggered through the Intersection Observer API.
+			</p>
+			<div class="text-reveal">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa labore doloribus dolorum molestias
+					voluptate provident, odio dolores veritatis laborum vitae fuga minus nobis cumque, velit numquam ad
+					recusandae architecto accusantium?
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, exercitationem. Sed soluta
+					repellendus dignissimos consequatur laboriosam molestiae eius. Laboriosam inventore sed iste
+					perspiciatis doloremque impedit repudiandae culpa accusantium, placeat dolor.
+				</p>
+				<p>
+					Ipsa autem nulla accusamus minus dolore laboriosam, a nam impedit facilis tempore quisquam pariatur
+					laborum vitae quos voluptatum, placeat laudantium. Ipsum, itaque qui omnis sunt officiis mollitia
+					ullam dolorum labore.
+				</p>
+				<p>
+					Aspernatur velit accusamus exercitationem suscipit ducimus aliquam ipsa pariatur sit, architecto
+					autem? Accusamus vitae velit, sunt a tenetur repellendus, iste quod nostrum cupiditate pariatur ab
+					expedita eveniet assumenda aut nulla.
+				</p>
+				<p>
+					Illum iusto repudiandae, ex voluptatem repellendus eligendi sit odio, quo delectus aperiam optio ab
+					ut ullam enim expedita perferendis a debitis, nulla facilis doloribus. Non esse saepe accusantium ad
+					dolores!
+				</p>
+				<p>
+					Recusandae repudiandae voluptatum iure! Exercitationem molestias consequuntur quia, libero ipsam
+					incidunt optio autem enim animi voluptatem repellendus minus. Iure doloribus eaque modi corrupti
+					obcaecati nisi laudantium dolore ducimus magnam voluptatem.
+				</p>
+				<p>
+					Quam perferendis recusandae quasi velit temporibus. Molestias ut neque quasi iste esse sit accusamus
+					eaque, nam sint, in ipsam ad aut nostrum delectus, doloremque nisi doloribus repellendus cumque
+					blanditiis natus!
+				</p>
+				<p>
+					Rerum eius rem deserunt et ad quas tempore, impedit voluptate architecto exercitationem fuga nisi
+					nihil vel delectus quidem perspiciatis quia officiis quasi itaque accusamus numquam inventore cum
+					commodi! Ipsa, nulla?
+				</p>
+				<p>
+					Aspernatur, ducimus veritatis labore recusandae nesciunt illo dolorem molestias quae illum
+					laudantium? Voluptatibus ratione distinctio inventore excepturi nobis rem adipisci in nihil est.
+					Natus eum iure dolores cupiditate qui deserunt?
+				</p>
+			</div>
+		</section>
+		<script>
+			const textRevealElements = document.querySelectorAll('.text-reveal');
+
+			new TextReveal(textRevealElements);
+		</script>
+	</body>
+</html>

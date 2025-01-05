@@ -1,0 +1,61 @@
+/* For layouts */
+:root {
+	--ft-size-0: clamp(1.25rem, 1.163rem + 0.4348vw, 1.5rem);
+	--ft-size-1: clamp(1.4063rem, 1.2432rem + 0.8152vw, 1.875rem);
+	--ft-size-2: clamp(1.582rem, 1.3171rem + 1.3247vw, 2.3438rem);
+	--ft-size-3: clamp(1.7798rem, 1.3798rem + 1.9998vw, 2.9297rem);
+	--ft-size-4: clamp(2.0023rem, 1.4249rem + 2.8867vw, 3.6621rem);
+	--ft-size-5: clamp(2.2525rem, 1.4438rem + 4.0436vw, 4.5776rem);
+	--ft-size-6: clamp(2.5341rem, 1.4253rem + 5.5442vw, 5.722rem);
+}
+
+section {
+	display: grid;
+	gap: 2rem;
+	width: min(100% - 5rem, 50rem);
+	margin-inline: auto;
+}
+
+h1 {
+	font-size: var(--ft-size-6);
+}
+
+p {
+	max-width: 65ch;
+	text-wrap: pretty;
+	margin: 0;
+	padding: 0;
+	font-size: var(--ft-size-0);
+
+	& + p {
+		margin-top: 1em;
+	}
+}
+
+.bigger {
+	font-size: var(--ft-size-1);
+}
+
+/* Main code */
+
+@keyframes RevealText {
+	to {
+		transform: translateY(0);
+	}
+}
+
+.text-reveal {
+	.splitting .word {
+		transform: translateY(100%);
+	}
+
+	.splitting.active .word {
+		animation: RevealText 0.5s calc(var(--line-index) * 100ms + var(--word-index) * 50ms) ease forwards;
+	}
+}
+
+.line {
+	display: flex;
+	overflow: hidden;
+	position: relative;
+}
